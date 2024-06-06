@@ -1,0 +1,37 @@
+/* Base box background color */
+$red-base-box-color: rgb(216, 45, 45);
+$blue-base-box-color: rgb(72, 72, 225);
+$green-base-box-color: rgb(54, 155, 54);
+
+/* Text color */
+$blue-light-text-color: rgb(85, 188, 228);
+$yellow-ligth-text-color: yellow;
+$purple-light-text-color: rgb(192, 125, 192);
+
+@mixin define-base-color($base-color) {
+  .base-color {
+    background-color: $base-color;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+  }
+}
+
+@mixin darken-and-lighten-color($box-color, $text-color) {
+  $amount-bg: 8%;
+  $amount-text: 5%;
+  @for $i from 1 through 4 {
+    .darken-#{$i} {
+      background-color: darken($box-color, $i * $amount-bg);
+      .color-box-text {
+        cowlor: lighten($text-color, $i * $amount-text);
+      }
+    }
+    .lighten-#{$i} {
+      background-color: lighten($box-color, $i * $amount-bg);
+      .color-box-text {
+        color: darken($text-color, $i * $amount-text);
+      }
+    }
+  }
+}

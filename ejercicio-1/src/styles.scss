@@ -1,0 +1,53 @@
+@use "base" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: sans-serif;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+@for $i from 1 through 3 {
+  .container-#{$i} {
+    display: flex;
+    gap: 8px;
+
+    @if $i == 1 {
+      $box-bg-color: $red-base-box-color;
+      $text-color: $blue-light-text-color;
+
+      @include define-base-color($box-bg-color);
+      @include darken-and-lighten-color($box-bg-color, $text-color);
+    } @else if $i == 2 {
+      $box-bg-color: $blue-base-box-color;
+      $text-color: $yellow-ligth-text-color;
+
+      @include define-base-color($box-bg-color);
+      @include darken-and-lighten-color(
+        $box-bg-color,
+        $yellow-ligth-text-color
+      );
+    } @else if $i == 3 {
+      $box-bg-color: $green-base-box-color;
+      $text-color: $purple-light-text-color;
+      
+      @include define-base-color($box-bg-color);
+      @include darken-and-lighten-color($box-bg-color, $text-color);
+    }
+  }
+}
