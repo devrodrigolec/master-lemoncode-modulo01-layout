@@ -24,7 +24,7 @@ $purple-light-text-color: rgb(192, 125, 192);
     .darken-#{$i} {
       background-color: darken($box-color, $i * $amount-bg);
       .color-box-text {
-        cowlor: lighten($text-color, $i * $amount-text);
+        color: lighten($text-color, $i * $amount-text);
       }
     }
     .lighten-#{$i} {
