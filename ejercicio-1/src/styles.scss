@@ -27,27 +27,10 @@ body {
     display: flex;
     gap: 8px;
 
-    @if $i == 1 {
-      $box-bg-color: $red-base-box-color;
-      $text-color: $blue-light-text-color;
+    $box-bg-color: define-box-base-colors($i);
+    $text-color: define-text-base-colors($i);
 
-      @include define-base-color($box-bg-color);
-      @include darken-and-lighten-color($box-bg-color, $text-color);
-    } @else if $i == 2 {
-      $box-bg-color: $blue-base-box-color;
-      $text-color: $yellow-ligth-text-color;
-
-      @include define-base-color($box-bg-color);
-      @include darken-and-lighten-color(
-        $box-bg-color,
-        $yellow-ligth-text-color
-      );
-    } @else if $i == 3 {
-      $box-bg-color: $green-base-box-color;
-      $text-color: $purple-light-text-color;
-      
-      @include define-base-color($box-bg-color);
-      @include darken-and-lighten-color($box-bg-color, $text-color);
-    }
+    @include define-base-color($box-bg-color);
+    @include darken-and-lighten-color($box-bg-color, $text-color);
   }
 }

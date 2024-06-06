@@ -20,11 +20,12 @@ $purple-light-text-color: rgb(192, 125, 192);
 @mixin darken-and-lighten-color($box-color, $text-color) {
   $amount-bg: 8%;
   $amount-text: 5%;
+
   @for $i from 1 through 4 {
     .darken-#{$i} {
       background-color: darken($box-color, $i * $amount-bg);
       .color-box-text {
-        cowlor: lighten($text-color, $i * $amount-text);
+        color: lighten($text-color, $i * $amount-text);
       }
     }
     .lighten-#{$i} {
@@ -33,5 +34,25 @@ $purple-light-text-color: rgb(192, 125, 192);
         color: darken($text-color, $i * $amount-text);
       }
     }
+  }
+}
+
+@function define-box-base-colors($item) {
+  @if $item == 1 {
+    @return $red-base-box-color;
+  } @else if $item == 2 {
+    @return $blue-base-box-color;
+  } @else if $item == 3 {
+    @return $green-base-box-color;
+  }
+}
+
+@function define-text-base-colors($item) {
+  @if $item == 1 {
+    @return $blue-light-text-color;
+  } @else if $item == 2 {
+    @return $yellow-ligth-text-color;
+  } @else if $item == 3 {
+    @return $purple-light-text-color;
   }
 }
