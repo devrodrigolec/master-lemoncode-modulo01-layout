@@ -1,0 +1,43 @@
+@use "./base" as *;
+
+@include define-theme-color();
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  place-content: center;
+  font-family: sans-serif;
+}
+
+.box {
+  width: 100px;
+  height: 80px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  p {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  .selectors-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid black;
+  }
+}

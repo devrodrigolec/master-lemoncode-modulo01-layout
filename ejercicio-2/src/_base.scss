@@ -1,0 +1,81 @@
+@use "./base-theme-variables" as *;
+
+@mixin send-variables-to-class(
+  $base-bg-color,
+  $warning-bg-color,
+  $important-bg-color,
+  $box-shadow,
+  $primary-font,
+  $secondary-font,
+  $border-radius
+) {
+  .base-box {
+    @extend .box;
+    background-color: $base-bg-color;
+    border-radius: $border-radius;
+  }
+
+  .warning-box {
+    @extend .box;
+    background-color: $warning-bg-color;
+    border-radius: $border-radius;
+  }
+
+  .important-box {
+    @extend .box;
+    background-color: $important-bg-color;
+    border-radius: $border-radius;
+  }
+
+  .box-with-shadow {
+    @extend .box;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+  }
+
+  .primary-font {
+    font-family: $primary-font;
+  }
+
+  .secondary-font {
+    font-family: $secondary-font;
+  }
+}
+
+@mixin define-theme-color() {
+  .default {
+    @include send-variables-to-class(
+      inherit,
+      inherit,
+      inherit,
+      inherit,
+      inherit,
+      inherit,
+      inherit
+    );
+  }
+
+  .red-theme {
+    @include send-variables-to-class(
+      $red-theme-base-bg-color,
+      $red-theme-warning-bg-color,
+      $red-theme-important-bg-color,
+      $red-theme-box-shadow,
+      $red-theme-primary-font,
+      $red-theme-secondary-font,
+      $red-theme-border-radius
+    );
+  }
+
+  .blue-theme {
+    @include send-variables-to-class(
+      $blue-theme-base-bg-color,
+      $blue-theme-warning-bg-color,
+      $blue-theme-important-bg-color,
+      $blue-theme-box-shadow,
+      $blue-theme-primary-font,
+      $blue-theme-secondary-font,
+      $blue-theme-border-radius
+    );
+  }
+}

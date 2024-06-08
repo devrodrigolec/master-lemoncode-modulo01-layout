@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio 2</title>
-  <link rel="stylesheet" href="./styles.scss">
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="./styles.scss">
+  </head>
+  <body>
+    <div class="container default">
+      <div class="selectors-div">
+        <h2>Select a Theme</h2>
+        <form id="form">
+          <div>
+            <label>Red Theme</label>
+            <input class="red-theme" type="radio" name="theme" value="red-theme" />
+          </div>
+          <div>
+            <label>Blue Theme</label>
+            <input class="blue-theme" type="radio" name="theme" value="blue-theme"/>
+          </div>
+        </form>
+      </div>
+      <div class="base-box">
+        <p>Base</p>
+      </div>
+      <div class="important-box">
+        <p>Important</p>
+      </div>
+      <div class="warning-box">
+        <p>Warning</p>
+      </div>
+      <p class="primary-font">Principal font</p>
+      <p class="secondary-font">Secondary font</p>
+      <div class="box-with-shadow">
+        <p>Box with Shadow</p>
+      </div>
+    </div>
+
+    <script src="./index.js" type="module"></script>
+  </body>
 </html>
