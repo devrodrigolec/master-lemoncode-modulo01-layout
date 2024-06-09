@@ -1,0 +1,74 @@
+@use "./base" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: $body-bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  width: 350px;
+  border: 1px solid rgb(183, 171, 171);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "img img img"
+    "title . ."
+    "text text text"
+    ". date date"
+    "button button button";
+
+  .ship-image {
+    width: 100%;
+    grid-area: img;
+  }
+
+  .title,
+  .text,
+  .pushished-date {
+    @include define-horizontal-padding();
+  }
+
+  .title {
+    font-weight: normal;
+    grid-area: title;
+  }
+  .text {
+    grid-area: text;
+    line-height: 1.8;
+  }
+  .pushished-date {
+    grid-area: date;
+    font-weight: bold;
+    padding: {
+      top: 8px;
+      bottom: 8px;
+    }
+
+    .date {
+      color: $text-accent-color;
+      font-weight: initial;
+    }
+  }
+  .more-info-button {
+    margin: 0 16px 16px;
+    grid-area: button;
+    padding: 20px;
+    font-size: 20px;
+    background-color: $btn-bg-color;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}

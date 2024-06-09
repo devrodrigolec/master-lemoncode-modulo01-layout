@@ -1,0 +1,10 @@
+/* Colors */
+$btn-bg-color: #7abe47;
+$body-bg-color: #eeeeee;
+$text-accent-color: #7abe47;
+
+@mixin define-horizontal-padding($padding: 16px) {
+  padding: 0 16px;
+
+  
+}
