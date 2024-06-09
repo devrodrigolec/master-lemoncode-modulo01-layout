@@ -2,4 +2,4 @@
 
  Para arrancar el proyecto usar el comando: 
 
- `npm start`
+ `npx parcel src/index.html`
