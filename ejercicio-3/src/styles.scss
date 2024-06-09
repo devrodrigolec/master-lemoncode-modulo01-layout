@@ -1,0 +1,68 @@
+@use "./base" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font: {
+    size: 20px;
+    family: sans-serif;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  @media (width < $media-mobile-screen) {
+    margin: 0 36px;
+    justify-content: center;
+  }
+
+  .nav {
+    background-color: $primary-color;
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    @media (width < $media-mobile-screen) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .list-item {
+      list-style-type: none;
+      height: 100%;
+      padding: 20px;
+
+      @media (width < $media-mobile-screen) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: $hover-color;
+        cursor: pointer;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: $text-color;
+      }
+    }
+  }
+}
