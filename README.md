@@ -1,4 +1,4 @@
-# Laboratorio Módulo 0 Layout
+# Laboratorio Módulo 01 Layout
 
 El repositorio está divido en cuatro carpetas, cada una tiene el archivo package.json para que funcione cada ejercicio de forma individual.
 
